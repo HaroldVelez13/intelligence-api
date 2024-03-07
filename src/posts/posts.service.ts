@@ -36,7 +36,7 @@ export class PostsService {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         });
-        if (response.status !== 200) {
+        if (response.status !== 201) {
             throw new BadRequestException('Something bad happened', { cause: new Error(), description: 'Some error description' })
         }
         post = await response.json();
